@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.juphoon.zeroflll.easydemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,6 +18,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".singtask.SingleTaskActivity"
+            android:launchMode="singleInstance"/>
+        <receiver android:name=".singtask.SingleTaskReceiver">
+            <intent-filter>
+                <action android:name="com.singletaskreceiver.filter"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".singtask.OrderFirstBroadcastReceiver">
+            <intent-filter android:priority="1">
+                <action android:name="android.intent.action.order.receiver"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".singtask.OrderSecondBroadcastReceiver">
+            <intent-filter android:priority="2">
+                <action android:name="android.intent.action.order.receiver"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".singtask.OrderThirdBroadcastReceiver">
+            <intent-filter android:priority="3">
+                <action android:name="android.intent.action.order.receiver"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
