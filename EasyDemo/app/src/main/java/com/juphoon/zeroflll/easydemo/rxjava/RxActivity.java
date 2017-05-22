@@ -41,12 +41,8 @@ public class RxActivity extends AppCompatActivity {
         title_tv = ((TextView) findViewById(R.id.activity_rx_title_iv));
 
 //        onRetrofit();
-        onSimpleUse();
     }
 
-    private void onSimpleUse() {
-        
-    }
 
     private void onRetrofit() {
         Retrofit retrofit = new Retrofit.Builder()
