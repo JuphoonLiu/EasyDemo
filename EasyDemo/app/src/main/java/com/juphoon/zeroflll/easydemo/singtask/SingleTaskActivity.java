@@ -15,6 +15,7 @@ public class SingleTaskActivity extends AppCompatActivity implements View.OnClic
     
     private Button send_btn;
     private Button order_btn;
+    private Button home_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,10 @@ public class SingleTaskActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_single_task);
         send_btn = ((Button) findViewById(R.id.activity_single_send_btn));
         order_btn = ((Button) findViewById(R.id.activity_single_order_btn));
+        home_btn = ((Button) findViewById(R.id.activity_single_home_btn));
         send_btn.setOnClickListener(this);
         order_btn.setOnClickListener(this);
+        home_btn.setOnClickListener(this);
         Log.i(TAG, "onCreate");
     }
 
@@ -67,6 +70,12 @@ public class SingleTaskActivity extends AppCompatActivity implements View.OnClic
             case R.id.activity_single_order_btn:
                 Intent orderBroadcast = new Intent(getString(R.string.order_broadcast));
                 sendOrderedBroadcast(orderBroadcast, null);
+                break;
+            case R.id.activity_single_home_btn:
+                Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+                homeIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                homeIntent.addCategory(Intent.CATEGORY_HOME);
+                startActivity(homeIntent);
                 break;
         }
 

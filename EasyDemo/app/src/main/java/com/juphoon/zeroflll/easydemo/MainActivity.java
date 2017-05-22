@@ -2,17 +2,22 @@ package com.juphoon.zeroflll.easydemo;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.juphoon.zeroflll.easydemo.okhttp.OkhttpActivity;
 import com.juphoon.zeroflll.easydemo.retrofit.RetrofitActivity;
+import com.juphoon.zeroflll.easydemo.rxjava.RxActivity;
 import com.juphoon.zeroflll.easydemo.singtask.SingleTaskActivity;
+import com.juphoon.zeroflll.easydemo.widget.WidgetActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         appList = new ArrayList<>();
         addList("Retrofit", RetrofitActivity.class);
         addList("SingleTask", SingleTaskActivity.class);
-        addList("OkHttp", RetrofitActivity.class);
-        addList("RxJava", RetrofitActivity.class);
+        addList("OkHttp", OkhttpActivity.class);
+        addList("RxJava", RxActivity.class);
+        addList("Widget", WidgetActivity.class);
+
+        Log.i("MANUFACTURE", Build.MANUFACTURER);
     }
 
     private void addList(String title, Class<? extends AppCompatActivity> app) {

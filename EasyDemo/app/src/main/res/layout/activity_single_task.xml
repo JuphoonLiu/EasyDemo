@@ -31,6 +31,16 @@
             android:layout_height="50dp"
             android:text="有序广播" />
 
+        <View
+            android:layout_width="100dp"
+            android:layout_height="20dp"/>
+
+        <Button
+            android:id="@+id/activity_single_home_btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="桌面"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

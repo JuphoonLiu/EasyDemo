@@ -19,31 +19,34 @@
             </intent-filter>
         </activity>
         <activity android:name=".retrofit.RetrofitActivity" />
-        <activity android:name=".singtask.SingleTaskActivity"
-            android:launchMode="singleInstance"/>
+        <activity
+            android:name=".singtask.SingleTaskActivity"
+            android:launchMode="singleInstance" />
+
         <receiver android:name=".singtask.SingleTaskReceiver">
             <intent-filter>
-                <action android:name="com.singletaskreceiver.filter"/>
+                <action android:name="com.singletaskreceiver.filter" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".singtask.OrderFirstBroadcastReceiver">
             <intent-filter android:priority="1">
-                <action android:name="android.intent.action.order.receiver"/>
+                <action android:name="android.intent.action.order.receiver" />
             </intent-filter>
         </receiver>
-
         <receiver android:name=".singtask.OrderSecondBroadcastReceiver">
             <intent-filter android:priority="2">
-                <action android:name="android.intent.action.order.receiver"/>
+                <action android:name="android.intent.action.order.receiver" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".singtask.OrderThirdBroadcastReceiver">
+            <intent-filter android:priority="3">
+                <action android:name="android.intent.action.order.receiver" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".singtask.OrderThirdBroadcastReceiver">
-            <intent-filter android:priority="3">
-                <action android:name="android.intent.action.order.receiver"/>
-            </intent-filter>
-        </receiver>
+        <activity android:name=".rxjava.RxActivity" />
+        <activity android:name=".widget.WidgetActivity"></activity>
+        <activity android:name=".okhttp.OkhttpActivity"/>
     </application>
 
 </manifest>

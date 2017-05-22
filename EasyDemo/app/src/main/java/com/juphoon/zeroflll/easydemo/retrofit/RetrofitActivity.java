@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.juphoon.zeroflll.easydemo.R;
+import com.juphoon.zeroflll.easydemo.bean.Repo;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -70,25 +71,6 @@ public class RetrofitActivity extends AppCompatActivity {
         Call<Repo> getForData(@Path("type") String type);
     }
 
-    class Repo {
-        private int RESPONSE_STATUS;
-        private String Tips;
 
-        public int getRESPONSE_STATUS() {
-            return RESPONSE_STATUS;
-        }
-
-        public void setRESPONSE_STATUS(int RESPONSE_STATUS) {
-            this.RESPONSE_STATUS = RESPONSE_STATUS;
-        }
-
-        public String getTips() {
-            return Tips;
-        }
-
-        public void setTips(String tips) {
-            Tips = tips;
-        }
-    }
 
 }
